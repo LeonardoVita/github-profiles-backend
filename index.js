@@ -12,8 +12,8 @@ app.use((req, res, next) => {
   next();
 })
 
-const client_id = process.env.REACT_APP_CLIENT_ID
-const client_secret = process.env.REACT_APP_CLIENT_SECRET
+const client_id = process.env.CLIENT_ID
+const client_secret = process.env.CLIENT_SECRET
 
 app.get('/', (request, response) => {
   response.send('Simple OAuth app')
@@ -21,7 +21,7 @@ app.get('/', (request, response) => {
 
 // app.get('/login/github', (request, response) => {
 
-//   const url = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${host}/Authorize`
+//   const url = `https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}&redirect_uri=${host}/Authorize`
 //   response.redirect(url)
 // })
 
