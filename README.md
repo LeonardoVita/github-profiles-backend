@@ -6,13 +6,13 @@ Using the github API for OAuth authentication and getting profiles and repositor
  <a href="https://www.linkedin.com/in/leonardo-vita-milanez-de-almeida-48b27a14a/" target="_blank">
    <img src="https://img.shields.io/badge/Linkedin--inactive?style=social&logo=Linkedin" alt="linkedin"/>
  </a>
- <a href="https://ghprofiles-5cf24.web.app" target="_blank">
-   <img src="https://img.shields.io/badge/firebase_app--inactive?style=social&logo=Firebase&logoColor=yellow" alt="firebase app"/>
+ <a href="https://ghprofiles.herokuapp.com" target="_blank">
+   <img src="https://img.shields.io/badge/heroku_app--inactive?style=social&logo=heroku" alt="heroku app"/>
  </a> 
- <a href="https://app.codacy.com/gh/LeonardoVita/github-profiles/dashboard?branch=master" target="_blank">
+ <a href="https://app.codacy.com/gh/LeonardoVita/github-profiles-backend/dashboard?branch=master" target="_blank">
    <img src="https://img.shields.io/badge/code__quality-B-brightgreen?logo=codacy" alt="codacy quality"/>
  </a>
- <img src="https://img.shields.io/badge/Reactjs-100%25-informational" alt="reactjs 100%"/>
+ <img src="img.shields.io/badge/javascript-100%25-informational" alt="reactjs 100%"/>
  <img src="https://img.shields.io/badge/license-MIT-red" alt="license MIT"/>
 </p>
 
