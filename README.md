@@ -12,7 +12,7 @@ Using the github API for OAuth authentication and getting profiles and repositor
  <a href="https://app.codacy.com/gh/LeonardoVita/github-profiles-backend/dashboard?branch=master" target="_blank">
    <img src="https://img.shields.io/badge/code__quality-B-brightgreen?logo=codacy" alt="codacy quality"/>
  </a>
- <img src="img.shields.io/badge/javascript-100%25-informational" alt="reactjs 100%"/>
+ <img src="https://img.shields.io/badge/javascript-100%25-informational" alt="javascript 100%"/>
  <img src="https://img.shields.io/badge/license-MIT-red" alt="license MIT"/>
 </p>
 
