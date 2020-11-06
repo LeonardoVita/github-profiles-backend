@@ -1,23 +1,23 @@
-const express = require('express')
-const cors = require('cors')
-const superagent = require('superagent')
-const app = express()
+const express = require('express');
+const cors = require('cors');
+const superagent = require('superagent');
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE')
   app.use(cors())
   next();
-})
+});
 
-const client_id = process.env.CLIENT_ID
-const client_secret = process.env.CLIENT_SECRET
+const client_id = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
 
 app.get('/', (request, response) => {
   response.send('Simple OAuth app')
-})
+});
 
 // app.get('/login/github', (request, response) => {
 
@@ -28,7 +28,7 @@ app.get('/', (request, response) => {
 
 app.post('/Authorize', async (request, response) => {
 
-  const { code } = request.body
+  const { code } = request.body;
 
   const data = await superagent
     .post('https://github.com/login/oauth/access_token')
@@ -39,7 +39,7 @@ app.post('/Authorize', async (request, response) => {
       response.send(err)
     })
 
-  const access_data = await JSON.parse(data.text)
+  const access_data = await JSON.parse(data.text);
 
   const user = await superagent
     .get('https://api.github.com/user')
@@ -50,16 +50,16 @@ app.post('/Authorize', async (request, response) => {
       response.send(err)
     })
 
-  const user_data = JSON.parse(user.text)
-  console.log(`Autorizado!! ${user_data.name}`)
-  response.send({ user_data, access_data })
+  const user_data = JSON.parse(user.text);
+  console.log(`Autorizado!! ${user_data.name}`);
+  response.send({ user_data, access_data });
 
-})
+});
 
 app.get('/users/:name', async (request, response) => {
 
-  const { name } = request.params
-  const { access_token, token_type } = request.query
+  const { name } = request.params;
+  const { access_token, token_type } = request.query;
 
   const user = await superagent
     .get(`https://api.github.com/users/${name}`)
@@ -67,13 +67,13 @@ app.get('/users/:name', async (request, response) => {
     .set('User-Agent', 'ghprofiles')
     .catch((err) => { console.log(err) })
 
-  response.send(user.body)
-})
+  response.send(user.body);
+});
 
 app.get('/users/:name/repos', async (request, response) => {
 
-  const { name } = request.params
-  const { access_token, token_type, sort, per_page } = request.query
+  const { name } = request.params;
+  const { access_token, token_type, sort, per_page } = request.query;
 
   const user = await superagent
     .get(`https://api.github.com/users/${name}/repos`)
@@ -82,11 +82,11 @@ app.get('/users/:name/repos', async (request, response) => {
     .query({ 'sort': sort, 'per_page': per_page })
     .catch((err) => { console.log(err) })
 
-  response.send(user.body)
-})
+  response.send(user.body);
+});
 
-const PORT = process.env.PORT || 3333
+const PORT = process.env.PORT || 3333;
 app.listen(PORT,()=>{
-  console.log("Servidor online")
+  console.log("Servidor online");
 });
 
